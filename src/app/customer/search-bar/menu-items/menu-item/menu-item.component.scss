@@ -1,0 +1,11 @@
+.menu-item {
+    :hover {
+        ::after {
+            content: "";
+            border-bottom: 4px solid green;
+            width: 70%;
+        }
+    }
+    background-color: rgba(162, 168, 204, 0.644);
+    color: white;
+}

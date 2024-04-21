@@ -1,0 +1,65 @@
+<div class="product-form">
+  <h2>{{ action }} product</h2>
+  <form [formGroup]="productForm" (submit)="submit()" class="product-form-fields">
+    <mat-form-field class="form-field">
+      <mat-label> Description
+      </mat-label>
+      <input type="text" matInput formControlName="description" required>
+      <mat-error *ngIf="showRequiredError('description')">
+        <span *ngIf="showRequiredError('description')">This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label> Category
+      </mat-label>
+      <input type="text" matInput formControlName="category" required>
+      <mat-error *ngIf="showRequiredError('category')">
+        <span *ngIf="showRequiredError('category')">This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label> Picture
+      </mat-label>
+      <input type="text" matInput formControlName="picture" required>
+      <mat-error *ngIf="showRequiredError('picture')">
+        <span *ngIf="showRequiredError('picture')">This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label> Price
+      </mat-label>
+      <input type="number" min="1" step="any" matInput formControlName="price" required>
+      <mat-error *ngIf="showRequiredError('price')">
+        <span *ngIf="showRequiredError('price')">This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+      <mat-slide-toggle
+        formControlName="discountEligible"
+      >Discount Eligible</mat-slide-toggle>
+      <mat-form-field class="form-field">
+        <mat-label> Count
+        </mat-label>
+        <input type="number" matInput formControlName="count" required>
+        <mat-error *ngIf="showRequiredError('count')">
+          <span *ngIf="showRequiredError('count')">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+      <div *ngIf="discountEligible" class="product-form-fields">
+        <button mat-raised-button color="primary" (click)="addCouponCode()">
+          Add Coupon Code
+        </button>
+        <h3>Coupon Codes</h3>
+        <span *ngFor="let couponCode of couponCodes.controls; let i = index" class="coupon-codes">
+          <mat-form-field appearance="fill">
+            <mat-label> Coupon Code
+            </mat-label>
+            <input matInput
+                   formControlName="couponCode">
+          </mat-form-field>
+          <mat-icon class="delete-btn" (click)="deleteCouponCode(i)">
+            delete_forever</mat-icon>
+        </span>
+      </div>
+    <button mat-raised-button color="primary" type="submit">Save Product</button>
+  </form>
+</div>

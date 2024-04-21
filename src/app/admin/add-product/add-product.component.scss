@@ -1,0 +1,44 @@
+.product-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.product-form-fields {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+mat-form-field {
+    width: 75%;
+    align-self: center;
+}
+
+.coupon-codes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    mat-form-field {
+        width: 75%;
+    }
+}
+
+button {
+    width: 20%;
+    margin: auto;
+}
+
+mat-slide-toggle {
+    align-self: center;
+}
+
+h3 {
+    align-self: center;
+}

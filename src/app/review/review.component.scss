@@ -1,0 +1,13 @@
+.product-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 20rem;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}

@@ -1,0 +1,10 @@
+<div class="product-container">
+    Products
+    <span *ngFor="let product of products$ | async" class="product">
+        <h2>{{ product.description }}</h2>
+        <span>We have {{product.count}} available.</span>
+        <span (click)="addToCart(product)"><mat-icon>add_shopping_cart</mat-icon></span>
+        <img src="https://picsum.photos/200/300"/>
+        <!-- <img [src]="product.picture"/> -->
+    </span>
+</div>

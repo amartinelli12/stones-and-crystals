@@ -1,0 +1,28 @@
+<div class="search-bar-container">
+    <button class="menu-container"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+    >
+        <mat-icon aria-hidden="false" aria-label="Application Menu" fontIcon="menu"></mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="menu-items" *ngIf="showMenu">
+        <app-customer-menu-item
+            [show]="showCustomerOptions"
+        >
+        <div (click)="navigate('home')"> {{ HOME }} </div>
+        </app-customer-menu-item>
+        
+        <app-customer-menu-item
+            [show]="showCustomerOptions"
+        >
+        <div (click)="navigate('products')"> {{ PRODUCTS }} </div>
+        </app-customer-menu-item>
+        
+        <app-customer-menu-item
+        >
+        <div (click)="navigate('review')"> {{ REVIEWS }} </div>
+        </app-customer-menu-item>
+        
+    </mat-menu>
+    <mat-icon [matBadge]="itemCount$ | async">shopping_cart</mat-icon>
+</div>
